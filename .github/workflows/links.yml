@@ -1,0 +1,14 @@
+name: Check Links
+on:
+  schedule: [{ cron: "0 5 * * 1" }]   # weekly
+  workflow_dispatch:
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose --no-progress --accept 200,429 --exclude "https://rejon.cai-lab.org/login" "docs/**/*.md"
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}

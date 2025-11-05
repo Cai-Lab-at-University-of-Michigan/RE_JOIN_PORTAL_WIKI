@@ -1,0 +1,85 @@
+site_name: RE-JOIN Portal Wiki
+site_url: https://Cai-Lab-at-University-of-Michigan.github.io/RE_JOIN_PORTAL_WIKI/
+repo_url: https://github.com/Cai-Lab-at-University-of-Michigan/RE_JOIN_PORTAL_WIKI
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  logo: assets/logo.svg 
+  favicon: assets/favicon.png
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+    - content.action.edit
+    - palette.toggle
+  palette:
+    - scheme: default
+      primary: silver
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - search
+  - glightbox
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - minify:
+      minify_html: true
+  # optional: auto-include snippets from other files
+  # - include-markdown
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Cai-Lab-at-University-of-Michigan
+  generator: false
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Login: login.md
+      - Forgot Password: forget-password.md
+  - Data:
+      - Upload Files: file-uploads.md
+      - Convert to SISF: file-conversion.md
+  - Visualization:
+      - Image Display Window: image-display-window-operations.md
+      - Basic Adjustments: basic-image-adjustments.md
+      - Image Library: image-library-management.md
+  - Annotation:
+      - nnInteractive: nninteractive-annotation.md
+  - Tutorials:
+      - nnInteractive Guide (PDF): tutorials/nninteractive-access-and-usage-guide.pdf
+  - Tags: tags.md
